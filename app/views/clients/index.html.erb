@@ -1,5 +1,7 @@
-<h1>Clients</h1>
-<%= link_to "New Post", new_client_path %>
+
+<%if user_signed_in?%>
+<%= link_to "Post an image", new_client_path %>
+<%end%>
   <ul>
     <% @clients.each do |client| %>
       <li><%= client.name %><br>

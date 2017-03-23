@@ -4,11 +4,11 @@ class ClientsController < ApplicationController
       render :index
     end
     def new
-      @client = Client.new
+      @client = current_user.clients.build
       render :new
     end
     def create
-      @client = Client.new(client_params)
+      @client = current_user.clients.build(client_params)
       if @client.save
         redirect_to  clients_path
       else

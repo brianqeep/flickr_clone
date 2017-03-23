@@ -3,4 +3,5 @@ class Client < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
     validates :name, :presence => true
     validates :tag, :presence => true
+  belongs_to :user
 end
